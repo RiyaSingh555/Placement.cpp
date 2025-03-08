@@ -1,0 +1,22 @@
+//WAP to input 10 floating values from user and show the smallest and biggest numbers in given values
+#include <stdio.h>
+int main() {
+    float num[10], s, l;
+    int i;
+    printf("enter 10 float no");
+    for (i = 0; i < 10; i++) {
+        scanf("%f", &num[i]);
+    }
+    s = l = num[0];
+    for (i = 1; i < 10; i++) {
+        if (num[i] < s) {
+            s = num[i];
+        }
+        if (num[i] > l) {
+            l = num[i];
+        }
+    }
+    printf("Smallest: %.2f\n", s);
+    printf("Largest: %.2f\n", l);
+	   return 0;
+}
