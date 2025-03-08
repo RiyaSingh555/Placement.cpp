@@ -1,0 +1,25 @@
+//Write a C program that takes a password as input and checks
+#include<stdio.h>
+int main() {
+char password[100];
+    int length = 0, upper = 0, lower = 0, digit = 0, special = 0, i;
+
+    printf("Enter password: ");
+    scanf("%s", password);
+
+    for (i = 0; password[i] != '\0'; i++) {
+        length++;
+        if (password[i] >= 'A' && password[i] <= 'Z') upper = 1;
+        if (password[i] >= 'a' && password[i] <= 'z') lower = 1;
+        if (password[i] >= '0' && password[i] <= '9') digit = 1;
+        if (password[i] == '@' || password[i] == '#' || password[i] == '$' || password[i] == '%' || password[i] == '&') special = 1;
+    }
+
+    if (length >= 8 && upper && lower && digit && special) {
+        printf("Password is Strong");
+    } else {
+        printf("Password is Weak");
+    }
+
+    return 0;
+}
