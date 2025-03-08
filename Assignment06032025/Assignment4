@@ -1,0 +1,21 @@
+//WAP to input a number and print that number into words like 123 as One Two Three
+#include <stdio.h>
+int main() {
+    int no, digit[10], count = 0, i;
+    char *words[] = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
+    printf("enter any num: ");
+    scanf("%d", &no);
+    if (no == 0) {
+        printf("zero");
+        return 0;
+    }
+    while (no > 0) {
+        digit[count++] = no % 10;
+        no /= 10;
+    }
+    for (i = count - 1; i >= 0; i--) {
+        printf("%s ", words[digit[i]]);
+    }
+    printf("\n");
+    return 0;
+}
