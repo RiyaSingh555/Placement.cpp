@@ -1,0 +1,22 @@
+//WAP to input user id and password and check authentication
+#include <stdio.h>
+int main() {
+    char id[20], password[20], ch;
+    int i = 0;
+    printf("enter User ID: ");
+    scanf("%s", id);
+    printf("Enter Password: ");
+    while (i < 19) {
+        ch = getch();  
+        if (ch == '\r') break;  
+        password[i] = ch;
+        printf("$");  
+        i++;
+    }
+    password[i] = '\0';
+    if (strcmp(user_id, "drbpsharma") == 0 && strcmp(password, "123456") == 0) 
+        printf("\nWelcome to Secure System\n");
+    else 
+        printf("\nAuthentication Failed\n");
+    return 0;
+}
